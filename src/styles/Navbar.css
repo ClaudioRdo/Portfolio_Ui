@@ -1,24 +1,77 @@
 .navbar {
   width: 100%;
   height: 100px;
-  background: #21325e;
+  background: #003049;
+  border-bottom: 3px solid #C1121F;
 }
 
 .links {
   width: 100%;
-  height: 100%;
+  height: 100%; 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   color: white;
 }
 
 .navbar a {
+  padding: .5em .8em;
+  color: white;
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a::before,
+.navbar a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.navbar a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #C1121F;
+  border-right: 3px solid #780000;
+  transform: translate(-100%, 50%);
+}
+
+.navbar a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #780000;
+  border-left: 3px solid #C1121F;
+  transform: translate(100%, -50%)
+}
+
+.navbar a:hover:before,
+.navbar a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.navbar a:hover {
+  color: #FDF0D5;
+}
+
+/* .navbar a {
+  transition: all 0.5s ease;
   color: white;
   text-decoration: none;
   margin: 20px;
   font-size: 25px;
 }
+
+.navbar a:hover{
+  color: #FDF0D5;
+  text-decoration: underline;
+} */
 
 .toggleButton {
   width: 100%;
